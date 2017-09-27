@@ -41,16 +41,26 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
         $ npm install
         $ npm run dev  
 
-* Vue Router （\src\router\index.js） 
+* Vue Router （\src\router\index.js） ,<router-link> 创建 a 标签来定义导航链接 ,[官方文档](https://router.vuejs.org/zh-cn/essentials/navigation.html)   
+
+        // 命名的路由
+        router.push({ name: 'user', params: { userId: 123 }})
+
+        // 带查询参数，变成 /register?plan=private
+        router.push({ path: 'register', query: { plan: 'private' }})
+我写成 ` this.$router.push({
+                        path:'/orderSuccess?orderId=' + res.result.orderId
+                    }) ` 也行，获取链接的值 `$route.query.orderId; `
 * 组件文件夹（\src\components）
 * Axios  负责异步接口请求 PS（get和post请求参数格式有点不一样的）  
-* Vuex 管理登陆状态 （\src\main.js：19 和 \src\components\Header.vue ：84~88）  
+* Vuex 管理登陆状态 （\src\main.js：19 和 \src\components\Header.vue ：84~88）,  Vuex store 实例放在computed中刷新不丢失哦[官方链接](https://vuex.vuejs.org/zh-cn/state.html)
 * Vue-LazyLoad 负责图片懒加载  
 * Vue-infinite-scroll 负责管理下拉商品更新 （\src\view\GoodList.vue:44 和 \src\view\GoodList.vue:167）  
 * DEV下的跨域的代理（config\index.js：30）
 * 金额过滤器（\src\util\currency.js）[来源尤大<sup>第70行</sup>](https://github.com/vuejs/vue/blob/1.0/src/filters/index.js)
 * import 有坑的，导入的components 注意大小写
 * 父子组件&自定义模态框 （\src\components\Modal.vue）[具体父子组件请查看官方文档](https://cn.vuejs.org/v2/guide/components.html#动态-Props)
+
 
 
 ## 后端 Node.js+Express操作（后端入口\server\bin\www) 
