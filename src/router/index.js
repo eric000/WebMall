@@ -29,6 +29,11 @@ export default new Router({
       path: '/orderConfirm',
       name: 'orderConfirm',
       component: orderConfirm
+    },
+    {
+      path: '/address',
+      name: 'Address',
+      component: Address
     }
 
   ]

@@ -53,7 +53,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
                     }) ` 也行，获取链接的值 `$route.query.orderId; `
 * 组件文件夹（\src\components）
 * Axios  负责异步接口请求 PS（get和post请求参数格式有点不一样的）  
-* Vuex 管理登陆状态 （\src\main.js：19 和 \src\components\Header.vue ：84~88）,  Vuex store 实例放在computed中刷新不丢失哦[官方链接](https://vuex.vuejs.org/zh-cn/state.html)
+* Vuex 管理登陆状态 （\src\main.js：19 和 \src\components\Header.vue ：84~88）,  Vuex store 实例刷新丢失的 请好好理解这个功能意义[官方链接](https://vuex.vuejs.org/zh-cn/state.html)
 * Vue-LazyLoad 负责图片懒加载  
 * Vue-infinite-scroll 负责管理下拉商品更新 （\src\view\GoodList.vue:44 和 \src\view\GoodList.vue:167）  
 * DEV下的跨域的代理（config\index.js：30）
